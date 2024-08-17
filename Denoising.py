@@ -16,6 +16,7 @@ def denoise(path, image_inserted = False, only_thresh = False, plot = True):
         path (str): Path to the image file or an image.
         image_inserted (bool, optional): Whether the input is a pre-loaded image. Defaults to False.
         only_thresh (bool, optional): If True, applies only thresholding. Defaults to False.
+        plot (bool, optional): If True, plots the original and denoised images. Defaults to True.
 
     Returns:
         numpy.ndarray: The denoised image as a NumPy array.

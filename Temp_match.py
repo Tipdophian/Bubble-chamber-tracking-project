@@ -2,7 +2,7 @@
 """
 Created on Wed Jul 10 15:41:05 2024
 
-@author: Tiffany
+@author: Tipperary
 """
 import cv2
 import numpy as np
@@ -52,8 +52,8 @@ def detect_crosses(image_path, template_path, w=15, h=15, threshold=0.69, margin
     return coord
 
 if __name__ == "__main__":
-    image_path = r"C:\Users\Tiffany\Downloads\COMPOS\Bubble Chamber Digital\bubble films (low res)\C1_8_web.png"
-    template_path = r"C:\Users\Tiffany\Downloads\COMPOS\Bubble Chamber Digital\Crosses\Cross.png"
+    #image_path = 
+    #template_path = 
     w, h = 15, 15
     coords = detect_crosses(image_path, template_path, w, h, plot=True)
 

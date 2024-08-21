@@ -2,7 +2,7 @@
 """
 Created on Tue Jul  2 16:30:42 2024
 
-@author: Tiffany
+@author: Tipperary
 """
 
 import cv2
@@ -41,7 +41,7 @@ def image(path, w = 1500, h = 800):
     return img
 
 if __name__ == "__main__":
-    path = r"C:\Users\Tiffany\Downloads\COMPOS\Bubble Chamber Digital\bubble films (low res)\C1_1_web.png"
+    #path = 
     img = image(path)
     cv2.imshow('Image', img)
     cv2.waitKey(0)

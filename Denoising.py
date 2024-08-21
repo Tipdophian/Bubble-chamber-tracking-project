@@ -2,7 +2,7 @@
 """
 Created on Mon Jul  8 11:52:20 2024
 
-@author: Tiffany
+@author: Tipperary
 """
 import cv2
 import numpy as np
@@ -41,4 +41,5 @@ def denoise(path, image_inserted = False, only_thresh = False, plot = True):
     return img
 
 if __name__ == "__main__":
-    img = denoise(r"C:\Users\Tiffany\Downloads\COMPOS\Bubble Chamber Digital\bubble films (low res)\C1_7_web.png")
+    #path = 
+    img = denoise(path)

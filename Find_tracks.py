@@ -2,7 +2,7 @@
 """
 Created on Sun Aug  4 17:39:06 2024
 
-@author: Tiffany
+@author: Tipperary
 """
 
 import numpy as np
@@ -164,5 +164,5 @@ def track_fit(path, col, spread = 1, show_detected = False, show_fit = False):
         cv.destroyAllWindows()
 
 if __name__ == "__main__":
-    path = r"C:\Users\Tiffany\Downloads\COMPOS\Bubble Chamber Digital\bubble films (high res)\img_004.tif"
+    #path = 
     fit_tracks = track_fit(path, range(260, 1459), show_fit = True) 

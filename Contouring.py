@@ -2,7 +2,7 @@
 """
 Created on Thu Jul  4 15:29:46 2024
 
-@author: Tiffany
+@author: Tipperary
 """
 
 import cv2
@@ -33,7 +33,8 @@ def contour(img):
     return img, contours
 
 if __name__ == "__main__":
-    img = image(r"C:\Users\Tiffany\Downloads\COMPOS\Bubble Chamber Digital\bubble films (high res)\img_001[1].tif")
+    #path =
+    img = image(path)
     cv2.imshow('Original', img)
     
     img = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY) # The upper and lower intensity bounds should be adjusted accordingly.

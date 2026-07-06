@@ -8,7 +8,7 @@ Created on Sun Aug  4 17:39:06 2024
 import numpy as np
 import cv2 as cv
 from matplotlib import pyplot as plt
-from Opening_images import image
+from Opening_images import image as open_img
 
 def track_detect(filepath, col_range, intensity_dist = False):
     """
@@ -23,7 +23,7 @@ def track_detect(filepath, col_range, intensity_dist = False):
       tuple: A tuple containing three elements:
           - pk (dict): A dictionary where keys are column indices and values are lists of peak coordinates (x, y).
     """
-    img = image(filepath)
+    img = open_img(filepath)
     margin = 30
     diff = 6 # Sensitivity to intensity difference
     peaks = []
@@ -142,7 +142,7 @@ def track_fit(path, col, spread = 1, show_detected = False, show_fit = False):
     
     # Plots tracks detected using intensity
     if show_detected == True:
-        img = image(path)
+        img = open_img(path)
         for track in tracks:
             for co in track:
                 cv.circle(img, (co[0], co[1] + 30), radius=1, color=(0, 255, 0), thickness=-1)  
@@ -153,7 +153,7 @@ def track_fit(path, col, spread = 1, show_detected = False, show_fit = False):
         
     # Plots tracks fitted with polynomial model (using fit_images)
     if show_fit == True:
-        img2 = image(path)  # Load image once outside the loop
+        img2 = open_img(path)  # Load image once outside the loop
         for fit_track in fit_tracks:
             xfit, yfit = zip(*fit_track)  # Unpack x and y coordinates
             for index in np.arange(0, len(xfit)):
@@ -165,4 +165,4 @@ def track_fit(path, col, spread = 1, show_detected = False, show_fit = False):
 
 if __name__ == "__main__":
     #path = 
-    fit_tracks = track_fit(path, range(260, 1459), show_fit = True) 
+    fit_tracks = track_fit("Sample.png", range(260, 1459), show_fit = True) 

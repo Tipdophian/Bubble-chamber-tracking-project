@@ -7,7 +7,9 @@ Created on Thu Jul  4 15:29:46 2024
 
 import cv2
 import numpy as np
-from Opening_images import image
+from Opening_images import image as open_img
+
+sample_path = "Sample.png"
 
 def contour(img): 
     """
@@ -34,14 +36,12 @@ def contour(img):
 
 if __name__ == "__main__":
     #path =
-    img = image(path)
+    img = open_img(sample_path)
+    print(img)
     cv2.imshow('Original', img)
-    
-    img = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY) # The upper and lower intensity bounds should be adjusted accordingly.
-    img, contours = contour(img)
+    thresh_val, thresholded_img = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY) # The upper and lower intensity bounds should be adjusted accordingly.
+    img, contours = contour(thresholded_img)
     cv2.imshow('Contoured', img)
     
     cv2.waitKey(0)
     cv2.destroyAllWindows()
-
-

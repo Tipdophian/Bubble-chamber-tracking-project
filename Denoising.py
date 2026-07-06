@@ -6,7 +6,9 @@ Created on Mon Jul  8 11:52:20 2024
 """
 import cv2
 import numpy as np
-from Opening_images import image 
+from Opening_images import image as open_img
+
+sample_path = "Sample.png"
 
 def denoise(path, image_inserted = False, only_thresh = False, plot = True):
     """
@@ -22,7 +24,7 @@ def denoise(path, image_inserted = False, only_thresh = False, plot = True):
         numpy.ndarray: The denoised image as a NumPy array.
     """
     if image_inserted == False:
-        img = image(path)
+        img = open_img(path)
     else:
         img = path
         
@@ -42,4 +44,4 @@ def denoise(path, image_inserted = False, only_thresh = False, plot = True):
 
 if __name__ == "__main__":
     #path = 
-    img = denoise(path)
+    img = denoise("Sample.png")

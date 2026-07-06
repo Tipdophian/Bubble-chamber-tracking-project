@@ -6,7 +6,7 @@ Created on Wed Jul 10 15:41:05 2024
 """
 import cv2
 import numpy as np
-from Opening_images import image
+from Opening_images import image as open_img
 
 def detect_crosses(image_path, template_path, w=15, h=15, threshold=0.69, margin=2, plot=False):
     """
@@ -24,8 +24,8 @@ def detect_crosses(image_path, template_path, w=15, h=15, threshold=0.69, margin
     Returns:
         list: A list of detected cross coordinates (x, y).
     """
-    img = image(image_path)
-    temp = image(template_path, w, h)
+    img = open_img(image_path)
+    temp = open_img(template_path, w, h)
     res = cv2.matchTemplate(img, temp, cv2.TM_CCOEFF_NORMED)
     loc = np.where(res >= threshold)
     coord = []
@@ -55,5 +55,5 @@ if __name__ == "__main__":
     #image_path = 
     #template_path = 
     w, h = 15, 15
-    coords = detect_crosses(image_path, template_path, w, h, plot=True)
+    coords = detect_crosses("Sample.png", "Cross.png", w, h, plot=True)
 

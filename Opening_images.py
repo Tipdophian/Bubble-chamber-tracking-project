@@ -42,7 +42,7 @@ def image(path, w = 1500, h = 800):
 
 if __name__ == "__main__":
     #path = 
-    img = image(path)
+    img = image(Sample.png)
     cv2.imshow('Image', img)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
